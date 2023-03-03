@@ -55,6 +55,12 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+
+    reviews       Review[]
+    currentlyReading currentlyReading[]
+    wantToRead wantToRead[]
+    read readBooks[]
+    
 }
 
 model VerificationToken {
@@ -64,3 +70,83 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+// schema
+
+model Author {
+    id        String   @id @default(cuid())
+    name      String
+    slug String
+    image String?
+    bio String?
+    books      Book[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+model Book {
+    id        String   @id @default(cuid())
+    title     String
+    description String
+    slug String
+    image String?
+
+    authorId    String
+    author      Author      @relation(fields: [authorId], references: [id])
+
+    reviews       Review[]
+    currentlyReading currentlyReading[]
+    wantToRead wantToRead[]
+    read readBooks[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Review {
+    id        String   @id @default(cuid())
+    title     String
+    body      String
+    rating    Int
+    bookId    String
+    book      Book      @relation(fields: [bookId], references: [id])
+    userId    String
+    user      User      @relation(fields: [userId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model currentlyReading {
+    id        String   @id @default(cuid())
+    bookId    String
+    book      Book      @relation(fields: [bookId], references: [id])
+    userId    String
+    user      User      @relation(fields: [userId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model wantToRead {
+    id        String   @id @default(cuid())
+    bookId    String
+    book      Book      @relation(fields: [bookId], references: [id])
+    userId    String
+    user      User      @relation(fields: [userId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model readBooks {
+    id        String   @id @default(cuid())
+    bookId    String
+    book      Book      @relation(fields: [bookId], references: [id])
+    userId    String
+    user      User      @relation(fields: [userId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
