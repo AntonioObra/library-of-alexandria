@@ -19,34 +19,30 @@ const Home: NextPage = () => {
 
       <main className="h-screen bg-black">
         <header>
-          <nav className="container mx-auto py-5">
+          <nav className="container mx-auto pt-8">
             <div className="flex w-full items-center justify-between font-strech   ">
               <Link
                 href="/"
-                className="text-md text-link font-bold text-white"
+                className="text-link text-2xl font-bold text-white"
                 data-content="LIBRARY OF ALEXANDRIA"
               >
                 LIBRARY OF ALEXANDRIA
               </Link>
-              <div className="flex gap-4 text-sm font-light">
-                <Link href="/about" className=" text-white">
-                  About
+              <div className="flex items-center space-x-10 font-strech text-xl uppercase">
+                <Link href="/about" className=" text-link" data-content="BOOKS">
+                  BOOKS
                 </Link>
-                <Link href="/login" className="text-white">
-                  Login
-                </Link>
-
-                <Link href="/signup" className="text-white">
-                  Sign Up
+                <Link href="/login" className="btn-link">
+                  <span className="link-inner">login</span>
                 </Link>
 
-                <Link href="/dashboard" className="text-white">
+                {/* <Link href="/dashboard" className="text-white">
                   Dashboard
                 </Link>
 
                 <Link href="/profile" className="text-white">
                   Profile
-                </Link>
+                </Link> */}
               </div>
             </div>
           </nav>
@@ -54,19 +50,15 @@ const Home: NextPage = () => {
 
         <section className="container mx-auto mt-20 h-3/4">
           <div className=" flex flex-col items-center justify-center">
-            {/* <Image
-              src="/images/header-video.mp4"
-              alt="index image"
-              height={1000}
-              width={1000}
-              className="-mb-8 w-[400px] grayscale"
-            /> */}
-
-            <video autoPlay loop muted className="-mb-24 w-[400px] grayscale">
+            <video
+              autoPlay
+              loop
+              muted
+              className="w-[400px] opacity-40 grayscale md:-mb-40 2xl:-mb-24"
+            >
               <source src="/images/header-video.mp4" type="video/mp4" />
             </video>
 
-            {/* <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/l3vR7HhoK4s7tJ7CE" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/animation-loop-illustration-l3vR7HhoK4s7tJ7CE">via GIPHY</a></p> */}
             <h1 className="z-10 text-center font-strech uppercase md:text-8xl 2xl:text-9xl ">
               library of alexandria
             </h1>
@@ -79,13 +71,13 @@ const Home: NextPage = () => {
               <h2 className=" font-strech text-7xl uppercase text-gray-300 ">
                 explore the world of knowledge
               </h2>
-              <p className=" w-4/5 text-2xl text-white">
+              <p className=" w-4/5 text-2xl font-medium text-white">
                 read books, articles, and more from the world&#39;s largest
                 library of knowledge and wisdom from the ancient world to the
                 modern day. find out more about the library of alexandria and
                 how you can contribute to the world&#39;s largest library.
               </p>
-              <button className="btn-link">
+              <button className="btn-link mt-10">
                 <span className="link-inner">find out more</span>
               </button>
             </div>
@@ -95,7 +87,7 @@ const Home: NextPage = () => {
               alt=""
               height={1000}
               width={1000}
-              className="absolute left-1/4 top-0 w-3/5 rotate-180 skew-y-12 opacity-80 grayscale"
+              className="absolute left-1/4 top-0 w-3/5 rotate-180 skew-y-12 opacity-30 grayscale"
             />
           </div>
         </section>
