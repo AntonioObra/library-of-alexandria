@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen bg-black">
+      <main className="min-h-screen bg-black">
         <header>
           <nav className="container mx-auto pt-8">
             <div className="flex w-full items-center justify-between font-strech   ">
@@ -92,6 +92,38 @@ const Home: NextPage = () => {
           </div>
         </section>
       </main>
+
+      <footer className="relative flex h-[600px] items-center bg-black">
+        <div className="absolute inset-0 h-full w-full">
+          <Image
+            src="/images/footer-img.webp"
+            alt=""
+            height={1000}
+            width={1000}
+            className="absolute  h-full w-full object-cover  opacity-30 grayscale"
+          />
+        </div>
+        <div className="container mx-auto h-1/2  py-10">
+          <div className="flex flex-col items-center justify-center gap-4">
+            <h1 className="font-strech text-8xl uppercase text-white">
+              library of alexandria
+            </h1>
+
+            <div className="flex items-center space-x-10 font-strech text-xl uppercase">
+              <Link href="/about" className=" text-link" data-content="BOOKS">
+                BOOKS
+              </Link>
+              <Link href="/login" className="btn-link">
+                <span className="link-inner">login</span>
+              </Link>
+            </div>
+
+            <p className="text-white">
+              © 2021 Library of Alexandria. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
