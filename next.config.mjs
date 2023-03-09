@@ -22,7 +22,7 @@ const config = {
   },
 
   images: {
-    domains: ["giphy.com"],
+    domains: ["**"],
   },
 };
 export default config;

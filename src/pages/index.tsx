@@ -17,113 +17,68 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen bg-black">
+      <main className="h-screen max-h-screen bg-gradient-to-bl from-dark-gray via-slate-800 to-dark-gray">
         <header>
-          <nav className="container mx-auto pt-8">
-            <div className="flex w-full items-center justify-between font-strech   ">
-              <Link
-                href="/"
-                className="text-link text-2xl font-bold text-white"
-                data-content="LIBRARY OF ALEXANDRIA"
-              >
-                LIBRARY OF ALEXANDRIA
-              </Link>
-              <div className="flex items-center space-x-10 font-strech text-xl uppercase">
-                <Link href="/about" className=" text-link" data-content="BOOKS">
-                  BOOKS
+          <nav className="container mx-auto flex items-center justify-between py-5">
+            <h5 className="font-vp text-3xl text-gold">Library</h5>
+            <ul className="flex flex-row justify-start space-x-20 text-gold">
+              <li>
+                <Link href="/books" className="text-xl">
+                  Books
                 </Link>
-                <Link href="/login" className="btn-link">
-                  <span className="link-inner">login</span>
+              </li>
+              <li>
+                <Link href="/books" className="text-xl">
+                  Books
                 </Link>
-
-                {/* <Link href="/dashboard" className="text-white">
-                  Dashboard
+              </li>
+              <li>
+                <Link href="/books" className="text-xl">
+                  Books
                 </Link>
-
-                <Link href="/profile" className="text-white">
-                  Profile
-                </Link> */}
-              </div>
-            </div>
+              </li>
+              <li>
+                <Link href="/books" className="text-xl">
+                  Books
+                </Link>
+              </li>
+            </ul>
+            <h5></h5>
           </nav>
         </header>
-
-        <section className="container mx-auto mt-20 h-3/4">
-          <div className=" flex flex-col items-center justify-center">
-            <video
-              autoPlay
-              loop
-              muted
-              className="w-[400px] opacity-40 grayscale md:-mb-40 2xl:-mb-24"
-            >
-              <source src="/images/header-video.mp4" type="video/mp4" />
-            </video>
-
-            <h1 className="z-10 text-center font-strech uppercase md:text-8xl 2xl:text-9xl ">
-              library of alexandria
+        <section className="container relative mx-auto flex h-[90%]  max-w-7xl flex-col items-center justify-center ">
+          <div className="z-50 mb-32 w-full">
+            <h1 className="z-50 text-left font-vp text-9xl text-gold ">
+              Discover
             </h1>
+            <h2 className="z-50 ml-24 text-left font-vp text-7xl text-gold ">
+              Library of Alexandria
+            </h2>
           </div>
-        </section>
 
-        <section className="container mx-auto  mt-64 h-screen">
-          <div className="relative  flex justify-between">
-            <div className=" absolute right-1/4 top-1/2 z-50 flex h-[700px] w-3/5 flex-col items-start justify-center gap-4">
-              <h2 className=" font-strech text-7xl uppercase text-gray-300 ">
-                explore the world of knowledge
-              </h2>
-              <p className=" w-4/5 text-2xl font-medium text-white">
-                read books, articles, and more from the world&#39;s largest
-                library of knowledge and wisdom from the ancient world to the
-                modern day. find out more about the library of alexandria and
-                how you can contribute to the world&#39;s largest library.
-              </p>
-              <button className="btn-link mt-10">
-                <span className="link-inner">find out more</span>
-              </button>
-            </div>
-
+          <div className="h-2/2 absolute top-0 right-24 w-2/6   ">
             <Image
-              src="/images/header2.webp"
-              alt=""
-              height={1000}
+              src="/images/sculpture.png"
+              alt="Picture of the author"
               width={1000}
-              className="absolute left-1/4 top-0 w-3/5 rotate-180 skew-y-12 opacity-30 grayscale"
+              height={1000}
+              className="grayscale"
             />
           </div>
+
+          <div className="h-2/2 absolute bottom-0 left-0 w-3/6   ">
+            <Image
+              src="/images/sculpture2.png"
+              alt="Picture of the author"
+              width={1000}
+              height={1000}
+              className="-scale-x-100 transform grayscale"
+            />
+          </div>
+
+          <div></div>
         </section>
       </main>
-
-      <footer className="relative flex h-[600px] items-center bg-black">
-        <div className="absolute inset-0 h-full w-full">
-          <Image
-            src="/images/footer-img.webp"
-            alt=""
-            height={1000}
-            width={1000}
-            className="absolute  h-full w-full object-cover  opacity-30 grayscale"
-          />
-        </div>
-        <div className="container mx-auto h-1/2  py-10">
-          <div className="flex flex-col items-center justify-center gap-4">
-            <h1 className="font-strech text-8xl uppercase text-white">
-              library of alexandria
-            </h1>
-
-            <div className="flex items-center space-x-10 font-strech text-xl uppercase">
-              <Link href="/about" className=" text-link" data-content="BOOKS">
-                BOOKS
-              </Link>
-              <Link href="/login" className="btn-link">
-                <span className="link-inner">login</span>
-              </Link>
-            </div>
-
-            <p className="text-white">
-              © 2021 Library of Alexandria. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </>
   );
 };

@@ -2,10 +2,21 @@
 const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      vp: ["Black Gold", "sans-serif"],
+      sans: ["Philosopher", "sans-serif"],
+    },
+
     extend: {
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
-        strech: ["Strech Sans", "sans-serif"],
+        sans: ["Philosopher", "sans-serif"],
+      },
+      colors: {
+        gold: "#e3d7bf",
+        "dark-gray": "#181818",
+      },
+      scale: {
+        "-100": "-1",
       },
     },
   },
